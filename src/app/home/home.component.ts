@@ -15,8 +15,8 @@ export class HomeComponent implements OnInit {
   passDataEvent = new EventEmitter<string>();
 
 
-  @Input('other')
-  otherName: string;
+  @Input()
+  index: number;
 
 
   constructor() { }

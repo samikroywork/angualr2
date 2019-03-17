@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+.is-first div{
+    border-top: 1px solid black;
+}
+
+
+.is-last div{
+    border-bottom: 1px solid black;
+}
+
+.is-odd div{
+    background-color: aqua;
+}
+
+.is-even div{
+    background-color: bisque;
+}

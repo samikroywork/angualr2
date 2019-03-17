@@ -1,12 +1,14 @@
-<div style="padding: 2em;background-color: aqua;margin: 1px">
+<div style="padding: 2em">
   <p>
-    Name is {{name}}
+    {{index}}) Name is {{name}}
+  </p>
+
+  <p *ngIf="name.indexOf('n')==0" style="text-decoration-style: solid">
+    Name start with 'n' 
+
   </p>
 
 
-  <p>
-    Other is {{otherName || 'Default'}}
-  </p>
 
 <button (click)="passData()">Pass to parent</button>
 

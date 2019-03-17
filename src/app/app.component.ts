@@ -7,7 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-training';
-
+  items=[{
+    name:"samik"
+  },
+  {
+    name:"name2"
+  },{
+    name:"name3"
+  }];
 
   appHomeClick(){
     console.log('Click on home component');
