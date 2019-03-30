@@ -3,13 +3,21 @@
     {{index}}) Name is {{name}}
   </p>
 
-  <p *ngIf="name.indexOf('n')==0" style="text-decoration-style: solid">
-    Name start with 'n' 
+  <ng-container *ngIf="name.indexOf('n')==0; else nonMatch">
+    <p style="text-decoration-style: solid">
+      Name start with 'n'
+    </p>
+    <p>
+      Have to include
+    </p>
+  </ng-container>
 
-  </p>
+
+  <ng-template #nonMatch>
+    <p> Non match</p>
+  </ng-template>
 
 
-
-<button (click)="passData()">Pass to parent</button>
+  <button (click)="passData()">Pass to parent</button>
 
 </div>
