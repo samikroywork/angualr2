@@ -1,15 +1,28 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<app-home  *ngFor="let i of items;index as ix;first as isFirst;last as isLast;odd as isOdd;even as isEven" 
-[index]="ix+1" [ngClass]="{'is-first':isFirst,'is-last':isLast,'is-even':isEven,'is-odd':isOdd}" 
-[name]="i.name" 
-(passDataEvent)="onPassDAta($event)"></app-home>
+<app-home *ngFor="let i of items;index as ix;first as isFirst;last as isLast;odd as isOdd;even as isEven" [index]="ix+1"
+  [ngClass]="{'is-first':isFirst,'is-last':isLast,'is-even':isEven,'is-odd':isOdd}" [name]="i.name"
+  (passDataEvent)="onPassDAta($event)"></app-home>
 
 {{sample+' other' | titlecase}}
 
-<br/>
+<br />
 {{now | date:'yyyy-MMM-dd hh:mm:ss'}}
 
 
 <p #p>
   Element ref
 </p>
+
+
+
+
+<app-custom-container>
+  <p class="container">
+    Paragraph element
+  </p>
+</app-custom-container>
+
+
+<app-custom-container>
+  <img class="container" src="https://www.gstatic.com/webp/gallery3/1.png" />
+</app-custom-container>

@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef,ViewChildren,QueryList,AfterViewInit } from '@angular/core';
 import { HomeComponent } from './home/home.component';
 
 @Component({
@@ -6,7 +6,7 @@ import { HomeComponent } from './home/home.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit{
   title = 'angular-training';
   sample="hello wOrld";
   now=new Date();
@@ -28,6 +28,13 @@ export class AppComponent {
   @ViewChild('p')
   elementP:ElementRef;
 
+  @ViewChildren(HomeComponent)
+  appHomeComponents:QueryList<HomeComponent>;
+
+
+  constructor(){
+    console.log('in constructor '+this.appHomeComponents);
+  }
 
 
   appHomeClick(){
@@ -39,6 +46,12 @@ export class AppComponent {
     console.log(this.homeComponent);
     console.log(this.elementP);
     console.log(this.homeComponentElementRef);
+    console.log(this.appHomeComponents);
+  }
+
+
+  ngAfterViewInit(): void{
+    console.log('in after view init '+this.appHomeComponents);
   }
 
 }
