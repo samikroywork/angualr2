@@ -1,0 +1,18 @@
+<ng-template #customContainer1 let-name="name">   <!-- let name= sampleContext.name --> 
+  <p>
+    Ng template custom container {{name}}
+  </p>
+</ng-template>
+
+<ng-template #customContainer2 let-name>
+  <p>
+    Ng template custom container {{name}}
+  </p>
+</ng-template>
+
+
+
+
+<ng-container *ngTemplateOutlet="customContainer1; context: sampleContext"></ng-container>
+
+
