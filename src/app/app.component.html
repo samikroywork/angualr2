@@ -9,14 +9,13 @@
 {{now | date:'yyyy-MMM-dd hh:mm:ss'}}
 
 
-<p #p>
+<p #p appHighlight>
   Element ref
 </p>
 
 
 
-
-<app-custom-container>
+<app-custom-container >
   <p class="container">
     Paragraph element
   </p>
@@ -34,5 +33,14 @@
 
 
 <h1 style="text-decoration: underline">Ng template </h1>
-<app-ng-template-sample>
+
+<ng-template #element>
+  <p>
+    Pass to child component - {{sample}}
+  </p>
+</ng-template>
+
+<app-ng-template-sample [temp]="element">
 </app-ng-template-sample>
+
+

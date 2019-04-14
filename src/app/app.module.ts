@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { CustomContainerComponent } from './custom-container/custom-container.component';
 import { CardComponent } from './card/card.component';
 import { NgTemplateSampleComponent } from './ng-template-sample/ng-template-sample.component';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { NgTemplateSampleComponent } from './ng-template-sample/ng-template-samp
     HomeComponent,
     CustomContainerComponent,
     CardComponent,
-    NgTemplateSampleComponent
+    NgTemplateSampleComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule

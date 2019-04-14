@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'app-ng-template-sample',
@@ -7,13 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgTemplateSampleComponent implements OnInit {
 
-  templates=['customContainer1','customContainer2'];
-  currentTemplate:string;
-  index:number=-1;
-  data:"sample data";
-  sampleContext={
-    name:"samik"
+  templates = ['customContainer1', 'customContainer2'];
+  currentTemplate: string;
+  index: number = -1;
+  data: "sample data";
+  sampleContext = {
+    name: "samik",
+    sample:"Sample info"
   }
+@Input()
+temp:TemplateRef<any>;
+
   constructor() { }
 
   ngOnInit() {
