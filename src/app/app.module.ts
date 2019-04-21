@@ -7,6 +7,7 @@ import { CustomContainerComponent } from './custom-container/custom-container.co
 import { CardComponent } from './card/card.component';
 import { NgTemplateSampleComponent } from './ng-template-sample/ng-template-sample.component';
 import { HighlightDirective } from './directives/highlight.directive';
+import { NgXUnlessDirective } from './directives/ng-xunless.directive';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HighlightDirective } from './directives/highlight.directive';
     CustomContainerComponent,
     CardComponent,
     NgTemplateSampleComponent,
-    HighlightDirective
+    HighlightDirective,
+    NgXUnlessDirective
   ],
   imports: [
     BrowserModule

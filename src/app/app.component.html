@@ -44,3 +44,31 @@
 </app-ng-template-sample>
 
 
+
+<p *ngIf="!!sample">
+
+  ng if logical
+</p>
+
+
+<ng-template [ngIf]="!!sample">
+  <p >
+
+    ng if logical through ng template
+  </p>
+  
+</ng-template>
+
+
+<p *appNgXUnless="!sample">
+
+  ng x appNgXUnless custom directives 
+</p>
+
+<ng-template [appNgXUnless]="!sample">
+  <p >
+
+    ng x appNgXUnless custom directives  through template
+  </p>
+  
+</ng-template>
