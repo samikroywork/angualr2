@@ -32,7 +32,7 @@
 
 
 
-<h1 style="text-decoration: underline">Ng template </h1>
+<h1 style="text-decoration: underline" class="bck-color">Ng template </h1>
 
 <ng-template #element>
   <p>
@@ -66,9 +66,16 @@
 </p>
 
 <ng-template [appNgXUnless]="!sample">
-  <p >
-
+  <p>
     ng x appNgXUnless custom directives  through template
   </p>
   
 </ng-template>
+
+<app-card>
+  <p  class="app-card-desc">Nested data</p>
+</app-card>
+
+
+
+

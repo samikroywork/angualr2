@@ -1,0 +1,11 @@
+.bck-color{
+    background-color: bisque;
+ }
+
+ :host{
+     color:green;
+ }
+
+ ::ng-deep .app-card .app-card-desc{
+    font-weight:bold;
+}
