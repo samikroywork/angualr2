@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
 
-let count = 0;
 
-@Injectable()
-export class HelloService {
-  id: number;
+@Injectable({
+    providedIn:"root"
+})
+export class WorldService {
   constructor() {
-    this.id = ++count;
   }
 
   sayHello(): string {

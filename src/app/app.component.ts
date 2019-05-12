@@ -4,6 +4,7 @@ import { HelloService } from './services/hello.service';
 import { RssMessageProviderService } from './services/rss-message-provider.service';
 import { MessageProvider } from './message.provider';
 import { WsMessageProviderService } from './services/ws-message-provider.service';
+import { WorldService } from './services/world.service';
 
 export function buildHelloService(){
   return new HelloService();
@@ -15,10 +16,10 @@ let messageProviderFactory=()=> new WsMessageProviderService();
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers:[{
+  providers:[HelloService/*{
     provide:HelloService,
-    useFactory:buildHelloService
-  },
+    useClass:HelloService
+  }*/,
   {
     provide:'MessageProvider',
     useFactory:messageProviderFactory
@@ -52,7 +53,8 @@ export class AppComponent implements AfterViewInit, OnInit {
 
 
   constructor(private helloService: HelloService,@Inject('MessageProvider') private messaageProvider:MessageProvider) {
-    console.log('in constructor ' + this.appHomeComponents);
+    //console.log('in constructor ' + this.appHomeComponents);
+    console.log(`Hello service count: ${helloService.id}`);
   }
 
 
