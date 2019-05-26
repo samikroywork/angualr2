@@ -8,6 +8,10 @@ import { CardComponent } from './card/card.component';
 import { NgTemplateSampleComponent } from './ng-template-sample/ng-template-sample.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { NgXUnlessDirective } from './directives/ng-xunless.directive';
+import { HttpClientModule } from '@angular/common/http';
+import { TodosComponent } from './todos/todos.component';
+import { TodoComponent } from './todo/todo.component';
+
 
 @NgModule({
   declarations: [
@@ -17,10 +21,13 @@ import { NgXUnlessDirective } from './directives/ng-xunless.directive';
     CardComponent,
     NgTemplateSampleComponent,
     HighlightDirective,
-    NgXUnlessDirective
+    NgXUnlessDirective,
+    TodosComponent,
+    TodoComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

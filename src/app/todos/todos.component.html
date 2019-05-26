@@ -1,0 +1,24 @@
+<div class="container">
+
+  <div class="row header">
+    <div class="col-md-2">
+      UserId
+    </div>
+    <div class="col-md-2">
+      Id
+    </div>
+    <div class="col-md-2">
+      Title
+    </div>
+    <div class="col-md-2">
+      Completed
+    </div>
+    <div class="col-md-4">
+        Action
+      </div>
+  </div>
+  <hr/>
+  
+  <app-todo *ngFor="let t of todos" [todo]="t"></app-todo>
+
+</div>
