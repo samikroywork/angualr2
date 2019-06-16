@@ -8,6 +8,7 @@ import { CardComponent } from './card/card.component';
 import { NgTemplateSampleComponent } from './ng-template-sample/ng-template-sample.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { NgXUnlessDirective } from './directives/ng-xunless.directive';
+import { SampleComponent } from './sample/sample.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NgXUnlessDirective } from './directives/ng-xunless.directive';
     CardComponent,
     NgTemplateSampleComponent,
     HighlightDirective,
-    NgXUnlessDirective
+    NgXUnlessDirective,
+    SampleComponent
   ],
   imports: [
     BrowserModule

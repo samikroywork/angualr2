@@ -5,30 +5,31 @@ import { RssMessageProviderService } from './services/rss-message-provider.servi
 import { MessageProvider } from './message.provider';
 import { WsMessageProviderService } from './services/ws-message-provider.service';
 import { WorldService } from './services/world.service';
+import { Observable, Subject } from 'rxjs';
 
-export function buildHelloService(){
+export function buildHelloService() {
   return new HelloService();
 }
 
-let messageProviderFactory=()=> new WsMessageProviderService();
+let messageProviderFactory = () => new WsMessageProviderService();
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers:[HelloService/*{
+  providers: [HelloService/*{
     provide:HelloService,
     useClass:HelloService
   }*/,
-  {
-    provide:'MessageProvider',
-    useFactory:messageProviderFactory
-  }]
+    {
+      provide: 'MessageProvider',
+      useFactory: messageProviderFactory
+    }]
 })
 export class AppComponent implements AfterViewInit, OnInit {
   title = 'angular-training';
   sample = "hello wOrld";
-  message:string;
+  message: string;
   now = new Date();
   items = [{
     name: "samik"
@@ -38,6 +39,9 @@ export class AppComponent implements AfterViewInit, OnInit {
   }, {
     name: "name3"
   }];
+
+  data = { name: this.title };
+
 
   @ViewChild(HomeComponent)
   homeComponent: HomeComponent;
@@ -52,11 +56,10 @@ export class AppComponent implements AfterViewInit, OnInit {
   appHomeComponents: QueryList<HomeComponent>;
 
 
-  constructor(private helloService: HelloService,@Inject('MessageProvider') private messaageProvider:MessageProvider) {
+  constructor(private helloService: HelloService, @Inject('MessageProvider') private messaageProvider: MessageProvider) {
     //console.log('in constructor ' + this.appHomeComponents);
     console.log(`Hello service count: ${helloService.id}`);
   }
-
 
   appHomeClick() {
     console.log('Click on home component');
@@ -76,6 +79,12 @@ export class AppComponent implements AfterViewInit, OnInit {
   }
 
   ngOnInit(): void {
-    this.message=this.messaageProvider.getMessage();
+    this.message = this.messaageProvider.getMessage();
+  }
+
+  changeTitle() {
+    this.title = "New title" + Math.round((Math.random() * 10));
+    this.data = { ...this.data, "name": this.title };
+    //this.data={name:this.title};
   }
 }
